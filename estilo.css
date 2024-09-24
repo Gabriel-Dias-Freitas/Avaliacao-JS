@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Neue', sans-serif;  
+    margin: 0;
+    padding: 0;   
+    background-color: #f4f4f4;    
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    
+}
+
+/* Navegação */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.nav h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    display: inline;
+}
+
+.nav h1 .flash {
+    background-color: orange;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    animation: pulsar 2s infinite; /* Animação */
+    box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange; /* Efeito neon */
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange; /* Efeito neon */
+    }
+    10% {
+        transform: scale(1.1); /* Aumenta o tamanho em 10% */
+        box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 20px orange; /* Intensifica o efeito neon */
+    }
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange; /* Efeito neon */
+    }
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons button, .nav-buttons a {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav-buttons button:hover, .nav-buttons a:hover {
+    background-color: #555;
+}
+
+/* Cartão (Criar Card) */
+.cartao {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    width: 100vw;
+    height: 100vh;
+}
+
+.cartao-caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.cartao-caixa h2 {
+    margin-bottom: 15px;
+}
+
+.cartao-caixa input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.erro {
+    color: red;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.bt {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* espaçamento entre botoes */
+}
+
+.bt button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bt button:hover {
+    background-color: #555;
+}
+
+/* Flashcards e Tempo */
+#tempo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+/* Botões personalizados */
+.btn, .nav-buttons button {
+    padding: 10px 20px;
+    background-color: #ff5722; /* Cor principal personalizada */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn:hover, .nav-buttons button:hover {
+    background-color: #e64a19; /* Cor do hover */
+}
+
+/* Seção "Sobre" */
+.sobre {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+.sobre p {
+    text-align: center;
+}
+
+.flashcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.flashcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+    border: 2px solid #FF9800;
+    border-radius: 15px;
+    background-color: #fde5c0;
+    width: 280px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alinha o texto à esquerda */
+    transition: transform 0.2s; /* Efeito de hover */
+}
+
+.flashcard:hover {
+    transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
+}
+
+.flashcard p {
+    font-size: 16px;
+    color: #333;
+}
+
+.stats {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.flashcard button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flashcard button:hover {
+    opacity: 0.9; /* Efeito de hover */
+}
+
+button[onclick*="marcarResultado"][onclick*="true"] { /* Botão Acertou */
+    background-color: #4CAF50; /* Verde */
+}
+
+button[onclick*="marcarResultado"][onclick*="false"] { /* Botão Errou */
+    background-color: #f44336; /* Vermelho */
+}
+
+.btn-ver-resposta {
+    background-color: #ff9800; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Padding interno */
+    cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+}
+
+.btn-ver-resposta:hover {
+    background-color: #ff9800; /* Cor ao passar o mouse */
+}
+
+
+
+/* Botões Voltar e Reiniciar */
+.botao-centralizado button {
+    background-color: #ff9800;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 16px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.botao-centralizado button:hover {
+    background-color: #e68900;
+}
+
+
+
+
+#tempo {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.btn-reiniciar {
+    display: none;
+}
+.resultado-jogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.resultado-jogo h2 {
+    margin-bottom: 20px;
+}
+.resultado-jogo p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.botao-centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}

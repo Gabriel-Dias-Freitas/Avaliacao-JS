@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaFlash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+   
+
+    <div class="nav">
+        <h1>Estudar<span class="flash">Flash</span></h1>
+        <div class="nav-buttons">
+            <button class="btn-criar" style="background-color: #4CAF50; color: white;" onclick="showCard()">Criar</button>
+            <button class="btn-excluir" style="background-color: #f44336; color: white;" onclick="excluirCard()">Excluir</button>
+        </div>
+    </div>
+    
+    <div class="cartao" id="cartao" style="display: none; backdrop-filter: blur(5px);">
+        <div class="cartao-caixa" style="background-color: #FFCC80; border: 2px solid #FF9800; padding: 20px; border-radius: 10px;">
+            <h2 style="color: #FF5722;">Criar card</h2>
+            <input type="text" id="ques" placeholder="Digite a questão" 
+                style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <input type="text" id="res" placeholder="Digite a resposta" 
+                style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <span class="erro" id="erro" style="display: none; color: rgb(228, 0, 0);">Preencha os dois campos</span>
+
+            <div class="bt" style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <button onclick="salvarCard()" style="padding: 10px 20px; background-color: #31b8ca; color: white;">Salvar</button>
+                <button onclick="hideCard()" style="padding: 10px 20px; background-color: #f44336; color: white;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcards">
+        
+    </div>
+   
+    <div id="tempo">
+        00:00
+    </div>
+   
+    <button class="btn" id="botao-iniciar" onclick="iniciarJogo()">Iniciar</button>
+    
+    <div class="sobre" id="sobre">
+        <h1>Como funciona?</h1>
+        <p>Para adicionar um card basta ir no botão criar...</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
